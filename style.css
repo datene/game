@@ -1,0 +1,68 @@
+#grid {
+  max-width: 900px;
+  width: 100%;
+  margin: 50px auto;
+  max-height: 100vh;
+  height: 500px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  display: grid;
+  grid-auto-rows: auto;
+  /* grid-gap: 5px; */
+}
+
+#grid > div {
+  display: grid;
+  grid-auto-columns: auto;
+  grid-auto-flow: column;
+  /* grid-gap: 5px; */
+}
+
+#grid > div > div {
+  /* border: 1px solid black; */
+  position: relative;
+}
+
+#player {
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+}
+
+.tree {
+  width: 100%;
+  height: 100%;
+  background-color: green;
+}
+
+.dying {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  animation-name: die;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes die {
+  0% {
+    background: linear-gradient(90deg, red 100%, black 100%);
+  }
+  100% {
+    background: linear-gradient(90deg, red 0%, black 0%);
+  }
+}
+
+.dead {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
